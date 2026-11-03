@@ -1,0 +1,10 @@
+.photo-filter-defs{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+.photo-tune{filter:url(#photo-natural);image-rendering:auto}
+.photo-tune-natural{filter:url(#photo-natural)}
+.photo-tune-mild{filter:url(#photo-mild)}
+.photo-tune-magenta{filter:url(#photo-magenta)}
+.photo-tune-portrait{filter:url(#photo-portrait)}
+.photo-tune-warm{filter:url(#photo-warm)}
+.photo-tune-night{filter:url(#photo-night)}
+.photo-tune-indoor{filter:url(#photo-indoor)}
+.home-hero-photo{filter:url(#photo-natural) grayscale(1)}

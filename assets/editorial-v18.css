@@ -1,0 +1,34 @@
+.publication-card .publication-cover.publication-mockup{display:block;height:auto;min-height:0;padding:0;background:transparent;text-decoration:none;overflow:visible}
+.publication-card .publication-cover.publication-mockup img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;transform:none;box-shadow:none}
+.publication-grid{align-items:start}
+.publication-card>h3{font-size:25px;line-height:1.25;margin-bottom:14px}
+.publication-card>p:not(.small-note){font-size:15px;line-height:1.75}
+.publications-catalog{display:flex;justify-content:space-between;align-items:center;gap:35px;margin-top:45px;padding-top:30px;border-top:1px solid var(--line)}
+.publications-catalog p{max-width:650px;font-size:15px;margin:0}
+.publications-catalog .button{flex-shrink:0}
+.row-media .book-stage.book-mockup-stage{background:transparent;padding:0;min-height:0}
+.row-media .book-stage.book-mockup-stage img,.row-media .brasil-project-art img{width:min(100%,420px);height:auto;max-height:none;object-fit:contain;box-shadow:none;transform:none;border:0;background:transparent}
+.row-media .brasil-project-art{padding:0;background:transparent}
+.row-media .documentary-photo{display:block;width:auto;height:auto;max-width:100%;max-height:640px;object-fit:contain;margin-inline:auto}
+.photo-stack .documentary-photo{max-height:520px}
+.expanded-press{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;align-items:start}
+.expanded-press .press-item{height:100%;min-width:0;padding:28px;border:1px solid var(--line);border-top:3px solid var(--yellow);background:var(--cream)}
+.expanded-press .press-item .meta{font-size:11px;line-height:1.8;color:var(--muted);letter-spacing:0;text-transform:none;margin-bottom:18px}
+.expanded-press .press-item h3{font-size:25px;line-height:1.25;margin-bottom:18px}
+.expanded-press .press-item>p:not(.meta){font-size:14px;line-height:1.8}
+.expanded-press .press-item .text-link{font-size:12px;margin-top:9px}
+.manifesto-hero{position:relative;min-height:clamp(450px,42vw,600px);display:flex;align-items:center;overflow:hidden;background:#173642;color:#fff;isolation:isolate}
+.manifesto-hero-image{position:absolute;inset:0;width:100%;height:100%;max-height:none;object-fit:cover;object-position:50% 80%;z-index:-3}
+.manifesto-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,19,28,.78),rgba(3,19,28,.52) 55%,rgba(3,19,28,.17));z-index:-2}
+.manifesto-hero-copy{padding-top:35px;padding-bottom:75px;position:relative;z-index:1}
+.manifesto-hero .breadcrumb{color:#fff;margin-top:0;margin-bottom:35px}
+.manifesto-hero .eyebrow{color:#fff;font-size:11px;margin-bottom:23px}
+.manifesto-hero h1{color:#fff;font-size:clamp(44px,6vw,83px);line-height:1.08;max-width:850px;letter-spacing:-.045em;margin:0 0 28px}
+.manifesto-hero-copy>p{max-width:570px;font-size:18px;line-height:1.75;margin:0;color:#fff}
+.manifesto-photo-credit{position:absolute;left:0;right:0;bottom:18px;text-align:right;font-size:10px;line-height:1.6;color:#fff;z-index:2}
+.manifesto-photo-credit a{color:inherit;text-decoration:none}
+.manifesto-hero a:hover{color:var(--yellow)}
+.manifesto-hero a:focus-visible{outline-color:var(--yellow)}
+@media(max-width:1050px){.expanded-press .press-item{padding:24px}.expanded-press .press-item h3{font-size:23px}.publication-card>h3{font-size:23px}.manifesto-hero{min-height:490px}}
+@media(max-width:850px){.publications-catalog{align-items:flex-start;flex-direction:column;gap:22px}.expanded-press{grid-template-columns:minmax(0,1fr);gap:24px}.expanded-press .press-item{height:auto}.row-media .documentary-photo{max-height:620px}.manifesto-hero{min-height:500px}.manifesto-hero-copy{padding-bottom:70px}.manifesto-hero h1{font-size:clamp(42px,8vw,66px)}.manifesto-hero-image{object-position:54% 85%}}
+@media(max-width:550px){.publication-card>h3{font-size:25px}.publication-card .publication-cover.publication-mockup{max-width:360px;margin-inline:auto}.row-media .book-stage.book-mockup-stage img,.row-media .brasil-project-art img{max-width:360px}.expanded-press .press-item{padding:25px 21px}.expanded-press .press-item h3{font-size:23px}.manifesto-hero{min-height:480px}.manifesto-hero .breadcrumb{margin-bottom:29px}.manifesto-hero h1{font-size:43px}.manifesto-hero-copy>p{font-size:16px}.manifesto-photo-credit{text-align:left;font-size:9px}.manifesto-hero-shade{background:linear-gradient(90deg,rgba(3,19,28,.83),rgba(3,19,28,.53))}}

@@ -1,0 +1,67 @@
+.home-campaign{overflow:hidden}
+.home-campaign .campaign-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(38px,6vw,90px);align-items:center}
+.home-campaign .campaign-copy{min-width:0}
+.home-campaign .campaign-copy h2{font-size:clamp(30px,3.3vw,44px);line-height:1.14;letter-spacing:-.035em;margin:0 0 24px}
+.home-campaign .campaign-copy>p{font-size:16px;line-height:1.8;max-width:48ch;margin:0 0 28px}
+.home-campaign .button{gap:18px;justify-content:space-between;border-radius:30px;line-height:1.45;white-space:normal;text-align:left}
+.home-campaign .button span{font-size:21px;line-height:1}
+.home-campaign-inteiras{padding:60px 0 0;background:var(--cream);border-top:3px solid var(--yellow)}
+.home-campaign-inteiras .campaign-copy{padding-bottom:64px}
+.home-campaign-inteiras .campaign-copy h2{color:var(--ink)}
+.home-campaign-inteiras .campaign-copy>p{color:var(--muted)}
+.campaign-photo-stage{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;isolation:isolate;padding-top:24px}
+.campaign-photo-stage:before{content:"";position:absolute;inset:12% -3% 0;border-radius:240px 240px 0 0;background:linear-gradient(155deg,#f0eadb,#e8e0cd);z-index:-1}
+.home-campaign .campaign-photo-stage img{display:block;width:100%;max-width:500px;height:auto;max-height:none;object-fit:contain;margin:0}
+.inteiras-wordmark{position:relative;width:min(100%,240px);aspect-ratio:1784/669;overflow:hidden;margin:0 0 28px}
+.inteiras-wordmark img{position:absolute!important;width:107.623%!important;height:auto!important;max-width:none!important;max-height:none!important;left:-5.045%;top:-98.655%;object-fit:contain}
+.home-campaign .campaign-button-inteiras{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.home-campaign .campaign-button-inteiras:hover{background:#edb000;border-color:#edb000}
+.home-campaign .campaign-button-inteiras:focus-visible{outline:3px solid var(--ink);outline-offset:5px}
+.home-campaign-brasil{padding:72px 0;background:var(--white);color:var(--ink)}
+.home-campaign-brasil .eyebrow{color:var(--gold);margin-bottom:22px;font-size:11px;letter-spacing:.12em;border-top:2px solid var(--yellow);padding-top:14px;width:fit-content}
+.home-campaign-brasil .campaign-copy h2{color:var(--ink)}
+.home-campaign-brasil .campaign-copy>p{color:var(--muted)}
+.home-campaign .campaign-button-brasil{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.home-campaign .campaign-button-brasil:hover{background:#edb000;border-color:#edb000}
+.home-campaign .campaign-button-brasil:focus-visible{outline:3px solid var(--ink);outline-offset:5px}
+.home-campaign .campaign-copy .campaign-download-note{font-size:12px;line-height:1.6;color:var(--muted);margin:15px 0 0}
+
+@media(max-width:1050px){.home-campaign .campaign-row{gap:45px}.home-campaign .campaign-copy h2{font-size:33px}.home-campaign .campaign-copy>p{font-size:15px}.inteiras-wordmark{width:220px}.home-campaign-inteiras{padding-top:48px}.home-campaign-inteiras .campaign-copy{padding-bottom:48px}}
+@media(max-width:850px){.home-campaign .campaign-row{grid-template-columns:minmax(0,1fr);gap:34px}.home-campaign-inteiras{padding:40px 0 0}.home-campaign-inteiras .campaign-copy{padding-bottom:42px}.campaign-photo-stage{padding:0;align-self:auto;justify-self:center;width:min(100%,430px)}.campaign-photo-stage:before{inset:10% 0 0}.home-campaign .campaign-copy h2{font-size:36px}.home-campaign .campaign-copy>p{font-size:16px;max-width:55ch}.home-campaign-brasil{padding:48px 0 42px}.home-campaign-brasil .campaign-copy{grid-row:1}.home-campaign-brasil .campaign-book-stage{grid-row:2}}
+@media(max-width:550px){.home-campaign .campaign-row{gap:28px}.home-campaign .campaign-copy h2{font-size:31px}.home-campaign .campaign-copy>p{font-size:15px;line-height:1.8;margin-bottom:24px}.inteiras-wordmark{width:min(100%,220px);margin-bottom:25px}.campaign-photo-stage{width:100%;max-width:390px}.home-campaign .button{max-width:100%;padding:15px 20px;font-size:13px}.home-campaign-brasil{padding-top:40px}.home-campaign-brasil .eyebrow{font-size:10px;letter-spacing:.1em}}
+
+/* Apoio ao Inteiras, com marcas originais em escala discreta. */
+.inteiras-support{margin-top:17px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink)}
+.inteiras-support-title{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.inteiras-support-title>span{font-size:10px;letter-spacing:.04em;color:var(--muted)}
+.inteiras-support-title>a{display:flex;align-items:center;min-height:44px}
+.inteiras-support .inteiras-ministry-brand{display:block;width:115px!important;height:auto!important;max-height:none!important;object-fit:contain}
+.inteiras-support-channels{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.inteiras-support-channels>a{display:flex;align-items:center;justify-content:center;min-height:44px;max-width:100%;flex-shrink:0}
+.inteiras-art{display:block;position:relative;overflow:hidden;flex-shrink:0;max-width:100%}
+.inteiras-art img{position:absolute!important;display:block;width:var(--art-width)!important;height:auto!important;max-width:none!important;max-height:none!important;left:var(--art-left);top:var(--art-top);object-fit:contain}
+.inteiras-art-180{width:60px;aspect-ratio:1900/1081;--art-width:151.579%;--art-left:-27.316%;--art-top:-125.995%}
+.inteiras-channel-190{background:none;border:0;border-radius:0;padding:0}
+.inteiras-art-190 img{filter:brightness(0)}
+.inteiras-art-190{width:58px;aspect-ratio:1128/515;--art-width:136.17%;--art-left:-19.326%;--art-top:-51.456%}
+.inteiras-art-qr{width:145px;aspect-ratio:2752/1113;--art-width:104.651%;--art-left:-2.253%;--art-top:-97.125%}
+.inteiras-support .inteiras-support-note{font-size:11px!important;line-height:1.65!important;color:var(--muted);margin:8px 0 0!important}
+.inteiras-support-note a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.inteiras-support a:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+.inteiras-action-card{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,5vw,65px);align-items:center;padding:38px;background:var(--cream);border:1px solid var(--line);border-top:3px solid var(--yellow);border-radius:4px}
+.inteiras-action-copy{min-width:0}
+.inteiras-action-copy .inteiras-wordmark{width:min(100%,180px);margin-bottom:22px}
+.inteiras-action-copy h2{font-size:30px;line-height:1.2;letter-spacing:-.025em;margin:0 0 20px}
+.inteiras-action-copy>p{font-size:15px;line-height:1.8;margin-bottom:25px}
+.inteiras-action-copy .button{font-size:13px;border-radius:30px;white-space:normal;text-align:left;gap:15px}
+.inteiras-action-support .inteiras-support{margin-top:0;padding-top:0;border-top:0}
+@media(max-width:850px){.inteiras-action-card{grid-template-columns:minmax(0,1fr);gap:30px;padding:30px}.inteiras-action-support .inteiras-support{border-top:1px solid var(--line);padding-top:14px}.inteiras-support-channels{gap:10px}}
+@media(max-width:550px){.inteiras-support-title{gap:8px}.inteiras-support .inteiras-ministry-brand{width:110px!important}.inteiras-art-qr{width:145px}.inteiras-action-card{padding:24px 20px}.inteiras-action-copy h2{font-size:27px}.inteiras-action-copy .button{padding:13px 18px}.inteiras-support-note span{display:none}.inteiras-support-note a{display:block;width:fit-content}}
+@media(max-width:360px){.inteiras-action-card{padding-inline:16px}}
+
+/* Imagem fotográfica do livro; a perspectiva e a sombra pertencem ao próprio mockup. */
+.campaign-book-stage{display:flex;align-items:center;justify-content:center;min-width:0;padding:0}
+.home-campaign .book-product-image{display:block;width:min(100%,400px);height:auto;max-height:none;object-fit:contain;margin:0;transform:none;box-shadow:none;border-radius:0}
+@media(max-width:1050px){.home-campaign .book-product-image{width:min(100%,360px)}}
+@media(max-width:850px){.home-campaign .book-product-image{width:min(100%,370px)}}
+@media(max-width:550px){.home-campaign .book-product-image{width:min(100%,310px)}}

@@ -1,0 +1,12 @@
+.letter-columns{max-width:none;padding:48px}
+.letter-columns .poem{column-count:2;column-gap:48px;column-rule:1px solid var(--line);font-size:18px;line-height:1.85;margin:32px 0}
+.letter-columns .poem p{margin:0 0 1.15em;break-inside:avoid;orphans:3;widows:3}
+.letter-columns .poem p:last-child{margin-bottom:0}
+.letter-columns .signature{max-width:none}
+.letter-reading-copy .lobianco-bio{font-size:14px;line-height:1.85;color:var(--muted);margin-top:25px;padding-top:22px;border-top:1px solid var(--line)}
+@media(max-width:1050px){.letter-columns{padding:38px}.letter-columns .poem{column-gap:36px;font-size:17px}}
+@media(max-width:850px){.letter-columns .poem{column-count:1;column-rule:0;max-width:650px}.letter-reading-copy .lobianco-bio{max-width:650px}}
+@media(max-width:550px){.letter-columns{padding:28px 23px}.letter-columns h2{font-size:32px}.letter-columns .poem{font-size:17px;line-height:1.85;margin:26px 0}.letter-columns .poem p{margin-bottom:1.05em}.letter-reading-copy .lobianco-bio{font-size:14px}}
+@media print{.letter-columns .poem{column-count:2;column-gap:28px;font-size:11pt;line-height:1.5}.letter-columns .buttons{display:none}}
+
+.video-player .letter-reading-video{display:block;width:auto;max-width:100%;height:auto;max-height:580px;object-fit:contain;margin-inline:auto}

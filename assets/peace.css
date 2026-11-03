@@ -1,0 +1,49 @@
+.peace-recognition{padding-top:24px;padding-bottom:65px}
+.peace-humanar-intro{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:55px;align-items:center;margin-bottom:38px}
+.peace-humanar-copy{min-width:0}
+.peace-humanar-copy h2{font-size:clamp(30px,2.8vw,40px);line-height:1.18;letter-spacing:-.03em;margin:0 0 24px}
+.peace-humanar-copy>p{font-size:16px;line-height:1.85;margin:0 0 20px}
+.peace-recognition .eyebrow,.peace-summary .eyebrow{font-size:10px;line-height:1.6;letter-spacing:.1em}
+.peace-humanar-links{gap:15px 25px;margin-top:27px}
+.peace-humanar-links .text-link{font-size:13px}
+.peace-intro-seal{width:100%;max-width:360px;justify-self:end}
+.peace-intro-seal img{display:block;width:100%;height:auto;object-fit:contain}
+.peace-certificate{width:100%;max-width:1100px;margin:0 auto}
+.peace-certificate>a{display:block;padding:12px;background:var(--white);border:1px solid var(--line);border-radius:4px}
+.peace-certificate img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;border-radius:0}
+.peace-certificate figcaption{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 20px;margin-top:13px;color:var(--muted);font-size:12px;line-height:1.65}
+.peace-certificate figcaption>a{color:var(--gold);text-underline-offset:4px}
+.peace-certificate a:focus-visible{outline:3px solid var(--gold);outline-offset:5px}
+.section.peace-network{padding-top:0;padding-bottom:55px}
+.peace-network-copy{max-width:960px}
+.peace-network-copy h2{font-size:clamp(28px,2.6vw,36px);line-height:1.2;letter-spacing:-.03em;margin:0 0 22px}
+.peace-network-copy h3{font-size:21px;line-height:1.3;letter-spacing:-.02em;margin:28px 0 14px}
+.peace-network-copy p{font-size:16px;line-height:1.85;margin:0 0 18px}
+.peace-network-copy .text-link{display:inline-block;font-size:13px;margin-top:5px}
+/* Preserve the existing Culture of Peace summary on Quem somos. */
+.peace-seal-stage{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:24px}
+.peace-seal-stage>a{display:block}
+.row-media.peace-seal-stage img{display:block;width:100%;height:auto;object-fit:contain;border-radius:0;max-height:none}
+.peace-summary-card{padding:40px;background:var(--cream);border-top:3px solid var(--yellow);gap:55px}
+.peace-summary-card .row-copy>p{font-size:16px;line-height:1.8}
+.peace-summary-card .row-copy h2{font-size:clamp(28px,2.7vw,38px)}
+.peace-summary-card .text-link{font-size:13px}
+.peace-ods-layout{display:grid;grid-template-columns:220px minmax(0,1fr);column-gap:55px;row-gap:30px;align-items:start}
+.peace-ods-heading{grid-column:1/-1;max-width:760px}
+.peace-ods-heading h2{font-size:clamp(30px,2.8vw,40px);line-height:1.18;letter-spacing:-.03em;margin:0 0 22px}
+.peace-ods-heading>p{font-size:16px;line-height:1.8;margin:0}
+.peace-ods-visual{grid-column:1;grid-row:2;width:220px;max-width:100%;align-self:center;margin:0}
+.peace-ods-visual img{display:block;width:100%;height:auto;object-fit:contain}
+.peace-ods-list{grid-column:2;grid-row:2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 34px;list-style:none;margin:0;padding:0}
+.peace-ods-list>li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:17px;border-top:2px solid var(--yellow);padding-top:17px;min-width:0}
+.peace-ods-number{color:var(--gold);font-size:34px;line-height:1;font-weight:500;letter-spacing:-.05em}
+.peace-ods-list h3{font-size:18px;line-height:1.35;letter-spacing:-.02em;margin:0 0 5px}
+.peace-ods-list h3>a{text-decoration:none}
+.peace-ods-list h3>a:hover{text-decoration:underline}
+.peace-ods-target{display:block;color:var(--gold);font-size:11px;line-height:1.5;margin-bottom:8px}
+.peace-ods-list p{color:var(--muted);font-size:14px;line-height:1.75;margin:0}
+.peace-ods-actions{grid-column:1/-1;grid-row:3;margin-top:4px}
+@media(max-width:1050px){.peace-humanar-intro{column-gap:35px;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)}.peace-ods-layout{grid-template-columns:180px minmax(0,1fr);column-gap:35px}.peace-ods-visual{width:180px}.peace-ods-list{column-gap:25px}.peace-ods-list>li{grid-template-columns:36px minmax(0,1fr);gap:12px}}
+@media(max-width:850px){.peace-recognition{padding-top:12px;padding-bottom:45px}.peace-humanar-intro{grid-template-columns:minmax(0,1fr);gap:25px}.peace-intro-seal{max-width:300px;justify-self:start}.peace-seal-stage{width:min(100%,520px);justify-self:center}.peace-summary-card{padding:30px;gap:30px}.peace-summary-card .row-media{width:100%;max-width:520px}.peace-ods-layout{grid-template-columns:150px minmax(0,1fr);column-gap:30px}.peace-ods-visual{width:150px}.peace-ods-list{grid-template-columns:minmax(0,1fr);row-gap:22px}}
+@media(max-width:650px){.peace-ods-layout{grid-template-columns:minmax(0,1fr);row-gap:26px}.peace-ods-heading{grid-column:1;grid-row:1}.peace-ods-visual{grid-column:1;grid-row:2;width:160px;justify-self:center}.peace-ods-list{grid-column:1;grid-row:3;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:25px}.peace-ods-actions{grid-column:1;grid-row:4}}
+@media(max-width:550px){.section.peace-network{padding-bottom:45px}.peace-network-copy h2{font-size:28px}.peace-network-copy h3{font-size:20px;margin-top:25px}.peace-network-copy p{font-size:15px;line-height:1.8}.peace-humanar-copy h2,.peace-ods-heading h2,.peace-summary-card .row-copy h2{font-size:30px}.peace-humanar-copy>p{font-size:15px;line-height:1.8}.peace-humanar-intro{margin-bottom:28px}.peace-intro-seal{max-width:250px}.peace-certificate>a{padding:7px}.peace-certificate figcaption{font-size:11px}.peace-seal-stage{padding:18px}.peace-summary-card{padding:25px 20px}.peace-summary-card .text-link{font-size:12px}.peace-ods-heading>p{font-size:15px}.peace-ods-visual{width:145px}.peace-ods-list{grid-template-columns:minmax(0,1fr);row-gap:23px}.peace-ods-list>li{grid-template-columns:40px minmax(0,1fr);gap:15px}.peace-ods-list h3{font-size:17px}.peace-ods-number{font-size:32px}}

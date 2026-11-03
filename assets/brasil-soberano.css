@@ -1,0 +1,17 @@
+.brasil-editorial-row{gap:clamp(35px,5vw,75px)}
+.brasil-stock-figure{margin:0;min-width:0}
+.brasil-stock-figure img{width:100%;height:auto;max-height:none;object-fit:contain;border-radius:4px}
+.brasil-stock-figure figcaption{font-size:10px;line-height:1.65;color:var(--muted);margin-top:12px}
+.brasil-stock-figure figcaption a{text-decoration:none;border-bottom:1px solid var(--line)}
+.brasil-stock-figure figcaption a:hover{border-color:var(--gold)}
+.brasil-foundations-copy>p{font-size:16px;line-height:1.8}
+.brasil-principles{display:grid;gap:22px;margin:27px 0 28px}
+.brasil-principles article{border-left:2px solid var(--yellow);padding-left:20px}
+.brasil-principles h3{font-size:20px;line-height:1.3;margin:0 0 10px}
+.brasil-principles p{font-size:15px;line-height:1.8;margin:0}
+.brasil-axis-heading{display:grid;grid-template-columns:28px minmax(0,1fr);gap:14px;align-items:start;margin-bottom:13px}
+.brasil-axis-icon{display:block;width:26px;height:26px;color:var(--gold);margin-top:1px}
+.brasil-axis-heading h3{margin:0;font-size:22px;line-height:1.3}
+#propostas .concept-grid>article>p{padding-left:42px}
+@media(max-width:850px){.brasil-editorial-row{gap:32px}.brasil-stock-figure{max-width:650px;margin-inline:auto}.brasil-editorial-row .row-copy>p{font-size:16px}.brasil-axis-heading h3{font-size:21px}}
+@media(max-width:550px){.brasil-principles{gap:21px;margin-top:24px}.brasil-principles h3{font-size:19px}.brasil-axis-heading{grid-template-columns:24px minmax(0,1fr);gap:12px}.brasil-axis-icon{width:24px;height:24px}.brasil-axis-heading h3{font-size:21px}#propostas .concept-grid>article>p{padding-left:36px}.brasil-stock-figure figcaption{font-size:10px}}

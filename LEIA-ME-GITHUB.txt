@@ -1,0 +1,51 @@
+INSTITUTO HUMANAR — ARQUIVOS PARA GITHUB PAGES
+
+Este pacote contém a versão atual do site: páginas, imagens, vídeos, áudio,
+apresentação e documentos. O formulário de contato utilizado é:
+https://forms.gle/eLa1DHEqhzJe8DT39
+
+COMO ENVIAR
+
+1. Extraia o arquivo instituto-humanar-github-pages.zip no computador.
+
+2. Envie o conteúdo extraído para a raiz do repositório do site no GitHub.
+   O arquivo index.html deve aparecer diretamente na raiz, junto de assets,
+   quem-somos, nossos-projetos e das demais pastas. Preserve os nomes e as
+   pastas exatamente como estão no pacote.
+
+3. Inclua o arquivo oculto .nojekyll. No Finder do Mac, pressione
+   Command + Shift + ponto para exibir os arquivos ocultos.
+
+4. Para enviar a pasta completa de uma vez, você pode usar GitHub Desktop
+   com o seu repositório clonado. Copie os arquivos do pacote para a pasta
+   desse repositório, registre a alteração e envie-a ao GitHub.
+
+   Se preferir o site do GitHub, use Add file > Upload files e envie em
+   lotes de até 100 arquivos, mantendo as subpastas. Todos os arquivos
+   individuais do pacote estão abaixo do limite de 25 MiB do upload web.
+   O ZIP serve para download e extração: os arquivos extraídos é que devem
+   aparecer no repositório.
+
+COMO ATIVAR A PUBLICAÇÃO
+
+5. No repositório, abra Settings > Pages.
+   Em Source, selecione Deploy from a branch.
+   Escolha a branch para a qual enviou os arquivos (normalmente main)
+   e a pasta / (root). Clique em Save.
+
+6. Aguarde a publicação e teste o endereço indicado pelo GitHub, incluindo
+   navegação, vídeos, downloads e formulário.
+
+7. Depois, preencha Custom domain com seu domínio real e configure os
+   registros DNS no Wix. Quando disponível, ative Enforce HTTPS.
+
+FONTES OFICIAIS
+
+Envio de arquivos e limites do upload pelo navegador:
+https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository
+
+Publicação do GitHub Pages:
+https://docs.github.com/pt/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+
+Domínio personalizado:
+https://docs.github.com/pt/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
