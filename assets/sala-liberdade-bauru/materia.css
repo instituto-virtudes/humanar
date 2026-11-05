@@ -1,0 +1,14 @@
+/* Styles scoped to this article: assets already have conventional photo finishing. */
+.funap-story .funap-photo,.funap-story .funap-video{margin:32px 0}
+.funap-story .funap-hero{margin-top:0;margin-bottom:35px}
+.funap-story img,.funap-story video{display:block;width:100%;height:auto;filter:none!important;border-radius:4px}
+.funap-story .funap-photo figcaption,.funap-story .funap-video figcaption{font-size:13px;line-height:1.6;color:var(--muted);margin-top:10px}
+.funap-story .funap-video{max-width:480px;margin:36px auto}
+.funap-story .funap-video video{aspect-ratio:4/5;background:#202426}
+.funap-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 22px;margin:28px 0 42px}
+.funap-gallery .funap-photo{margin:0;min-width:0}
+.funap-gallery .funap-photo a{display:block}
+.funap-gallery .funap-photo img{aspect-ratio:4/5;object-fit:contain;background:#f5f3ef}
+.funap-event-date{font-size:14px;color:var(--muted);margin:22px 0 0}
+.funap-actions{align-items:center;gap:20px;margin:24px 0 38px}
+@media(max-width:600px){.funap-gallery{grid-template-columns:minmax(0,1fr);gap:28px}.funap-actions{align-items:flex-start;flex-direction:column}.funap-story .funap-video{max-width:100%}.funap-gallery .funap-photo figcaption{font-size:14px}}
