@@ -54,3 +54,9 @@
 @media(max-width:1000px){.research-award{gap:35px}.childhood-books{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}.childhood-testimonial-media{height:280px}.childhood-testimonial video{max-height:280px}.blog-card-image{height:260px}}
 @media(max-width:850px){.home-senate-photo{max-width:680px;margin-top:22px}.home-senate-link{margin-top:23px}.research-award{grid-template-columns:minmax(0,1fr)}.award-certificate{max-width:680px}.childhood-addition{margin-top:50px;padding-top:40px}.blog-grid{gap:30px}.blog-card-image{height:230px;padding:14px}.blog-card h2{font-size:27px}.blog-reading{font-size:17px}.blog-intro .page-heading{padding-bottom:40px}}
 @media(max-width:600px){.childhood-testimonials,.blog-grid{grid-template-columns:minmax(0,1fr)}.childhood-testimonial-media{height:auto;min-height:190px;max-height:430px}.childhood-testimonial video{width:100%;height:auto;max-height:430px}.childhood-testimonial-copy{padding:25px 22px}.childhood-books{gap:10px}.childhood-book h4{font-size:16px;margin:10px 3px 0}.blog-card-image{height:auto;min-height:190px;padding:16px}.blog-card-image img{height:auto;max-height:310px}.blog-card h2{font-size:29px}.blog-card-copy{padding-top:23px}.home-senate-link .button{width:100%}.addiction-book .row-copy h2 br{display:none}.research-award-copy>p{font-size:15px}}
+
+/* O Senado inicia a sequência editorial: direita, esquerda, direita... */
+.human-public-copy.alternating-row{grid-template-columns:1fr 1fr;align-items:center}
+.human-public-copy .row-copy h2{margin-bottom:25px}
+.human-public-copy>.home-senate-photo{margin-top:0;max-width:none;min-width:0}
+@media(max-width:850px){.human-public-copy.alternating-row{grid-template-columns:minmax(0,1fr);gap:28px}}
