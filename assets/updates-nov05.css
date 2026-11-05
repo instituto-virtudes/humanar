@@ -1,0 +1,56 @@
+/* Atualizações editoriais: Senado, infância, livros e Blog. */
+.home-senate-photo{margin-top:25px;max-width:600px}
+.senate-photo img{display:block;width:100%;height:auto;object-fit:contain;border-radius:3px}
+.senate-photo figcaption{font-size:11px;line-height:1.55;color:var(--muted);margin-top:10px}
+.senate-portrait{max-width:440px;margin-inline:auto}
+.home-senate-link{margin-top:27px}
+.home-senate-link .button{font-size:13px}
+.childhood-addition{margin-top:70px;padding-top:55px;border-top:1px solid #ded9ce}
+.childhood-addition>.narrow{max-width:760px;margin-bottom:30px}
+.childhood-addition h3{font-size:clamp(28px,3vw,38px);line-height:1.2}
+.childhood-testimonials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;align-items:start}
+.childhood-testimonial{min-width:0;background:#fff;border:1px solid var(--line)}
+.childhood-testimonial-media{height:330px;background:#12202a;display:flex;align-items:center;justify-content:center}
+.childhood-testimonial video{width:100%;height:100%;max-height:330px;object-fit:contain}
+.childhood-testimonial-copy{padding:27px 30px}
+.childhood-testimonial-copy .eyebrow{font-size:10px;margin-bottom:13px}
+.childhood-testimonial h4{font-size:25px;line-height:1.25;letter-spacing:-.025em;font-weight:600;margin:0 0 18px}
+.childhood-testimonial-copy p{font-size:15px;line-height:1.75}
+.childhood-testimonial-copy p:last-child{margin:0}
+.research-award{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px}
+.award-certificate{display:block;background:white;padding:9px;border:1px solid var(--line)}
+.award-certificate img{width:100%;height:auto;object-fit:contain}
+.research-award-copy>p{font-size:16px;line-height:1.8}
+.childhood-books{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:start}
+.childhood-book{min-width:0}
+.childhood-book>a{display:flex;align-items:center;justify-content:center;aspect-ratio:2/3}
+.childhood-book img{display:block;width:100%;height:100%;object-fit:contain}
+.childhood-book h4{font-size:18px;line-height:1.35;letter-spacing:-.02em;font-weight:600;margin:18px 8px 0}
+.addiction-book .book-stage.book-mockup-stage{display:block;background:transparent;padding:0;min-height:0;text-align:center}
+.addiction-book .book-stage.book-mockup-stage img{display:block;width:min(100%,420px);height:auto;object-fit:contain;max-height:none;margin-inline:auto;box-shadow:none;transform:none}
+.book-download-note{font-size:12px;margin-top:18px}
+.publication-card .publication-cover.publication-mockup{display:flex;align-items:center;justify-content:center;aspect-ratio:2/3}
+.publication-card .publication-cover.publication-mockup img{width:100%;height:100%;object-fit:contain}
+.blog-intro{background:var(--yellow)}
+.blog-intro .page-heading{margin-bottom:0;padding-bottom:55px}
+.blog-intro .eyebrow{color:#5a4509}
+.blog-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;align-items:start}
+.blog-card{min-width:0;border-bottom:1px solid var(--line);padding-bottom:32px}
+.blog-card-image{display:flex;align-items:center;justify-content:center;background:var(--cream);height:305px;padding:20px}
+.blog-card-image img{width:100%;height:100%;object-fit:contain}
+.blog-card-copy{padding:29px 2px 0}
+.blog-card .eyebrow{font-size:10px;margin-bottom:16px}
+.blog-card h2{font-size:31px;line-height:1.2;margin-bottom:19px}
+.blog-title-link{text-decoration:none}
+.blog-card p{font-size:16px}
+.blog-reading{max-width:800px;margin-inline:auto;font-size:18px;line-height:1.85}
+.blog-reading h2{font-size:clamp(28px,3vw,37px);margin:1.5em 0 .7em}
+.blog-reading>.senate-photo{margin-bottom:35px}
+.blog-document{margin:35px 0}
+.blog-document img{width:100%;height:auto;object-fit:contain}
+.blog-back{padding-top:35px;margin-top:45px;border-top:1px solid var(--line)}
+/* Dez acessos principais continuam legíveis antes do menu recolhido. */
+@media(min-width:1101px){.site-header .nav{gap:12px}.site-header .nav a{font-size:12px}.site-header .nav-toggle{width:20px}.site-header .nav-parent{gap:2px}}
+@media(max-width:1000px){.research-award{gap:35px}.childhood-books{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}.childhood-testimonial-media{height:280px}.childhood-testimonial video{max-height:280px}.blog-card-image{height:260px}}
+@media(max-width:850px){.home-senate-photo{max-width:680px;margin-top:22px}.home-senate-link{margin-top:23px}.research-award{grid-template-columns:minmax(0,1fr)}.award-certificate{max-width:680px}.childhood-addition{margin-top:50px;padding-top:40px}.blog-grid{gap:30px}.blog-card-image{height:230px;padding:14px}.blog-card h2{font-size:27px}.blog-reading{font-size:17px}.blog-intro .page-heading{padding-bottom:40px}}
+@media(max-width:600px){.childhood-testimonials,.blog-grid{grid-template-columns:minmax(0,1fr)}.childhood-testimonial-media{height:auto;min-height:190px;max-height:430px}.childhood-testimonial video{width:100%;height:auto;max-height:430px}.childhood-testimonial-copy{padding:25px 22px}.childhood-books{gap:10px}.childhood-book h4{font-size:16px;margin:10px 3px 0}.blog-card-image{height:auto;min-height:190px;padding:16px}.blog-card-image img{height:auto;max-height:310px}.blog-card h2{font-size:29px}.blog-card-copy{padding-top:23px}.home-senate-link .button{width:100%}.addiction-book .row-copy h2 br{display:none}.research-award-copy>p{font-size:15px}}
