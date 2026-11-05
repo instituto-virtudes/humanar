@@ -1,5 +1,28 @@
-/* Logo original da usuária: enquadrar apenas as margens transparentes. */
-.blog-brand-header{background:var(--yellow);padding:30px 0}
-.blog-brand-mark{position:relative;width:min(100%,480px);aspect-ratio:1750/445;overflow:hidden;margin:0;line-height:0}
+/* Abertura editorial: marca original, conceito e conteúdos em fileira. */
+.blog-brand-header{background:var(--yellow);padding:48px 0}
+.blog-intro-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:center}
+.blog-brand-mark{position:relative;width:min(100%,420px);aspect-ratio:1750/445;overflow:hidden;margin:0;line-height:0}
 .blog-brand-mark img{position:absolute;display:block;width:142.857143%;max-width:none;height:auto;left:-10%;top:-24.719101%;object-fit:contain}
-@media(max-width:600px){.blog-brand-header{padding:24px 0}.blog-brand-mark{width:min(100%,320px)}}
+.blog-concept{font-size:17px;line-height:1.8;min-width:0;color:var(--ink)}
+.blog-concept p:last-child{margin-bottom:0}
+.blog-content-section .blog-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;align-items:stretch}
+.blog-content-section .blog-card{display:flex;flex-direction:column}
+.blog-content-section .blog-card-image{position:relative;display:block;height:auto;aspect-ratio:16/10;padding:0;flex:none}
+.blog-content-section .blog-card-image img{position:absolute;inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);object-fit:contain}
+.blog-content-section .blog-card-copy{display:flex;flex-direction:column;align-items:flex-start;flex:1;padding-top:22px}
+.blog-content-section .blog-card h2{font-size:26px;line-height:1.25}
+.blog-content-section .blog-card p{font-size:15px;line-height:1.75}
+.blog-content-section .blog-card-copy>.text-link{margin-top:auto}
+.blog-scroll-hint{display:none}
+@media(max-width:1000px){.blog-intro-grid{gap:40px}.blog-concept{font-size:16px}.blog-content-section .blog-card h2{font-size:23px}}
+@media(max-width:850px){
+ .blog-intro-grid{grid-template-columns:minmax(0,1fr);gap:30px}
+ .blog-concept{max-width:740px}
+ .blog-content-section .blog-grid{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-inline:0;padding:3px 3px 18px;scrollbar-width:thin;scrollbar-color:var(--gold) var(--cream)}
+ .blog-content-section .blog-card{flex:0 0 min(82vw,350px);scroll-snap-align:start}
+ .blog-content-section .blog-card h2{font-size:25px}
+ .blog-content-section .blog-card-image{min-height:0}
+ .blog-scroll-hint{display:flex;justify-content:space-between;gap:18px;font-size:12px;color:var(--muted);margin-bottom:22px}
+ .blog-scroll-hint span{font-size:18px;line-height:1}
+}
+@media(max-width:600px){.blog-brand-header{padding:30px 0}.blog-brand-mark{width:min(100%,320px)}.blog-intro-grid{gap:24px}.blog-content-section.section{padding:38px 0}}
