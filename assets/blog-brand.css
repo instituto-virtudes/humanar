@@ -1,5 +1,5 @@
 /* Logo original da usuária: enquadrar apenas as margens transparentes. */
-.blog-brand-header{background:var(--yellow);padding:48px 0}
-.blog-brand-mark{position:relative;width:min(100%,900px);aspect-ratio:1750/445;overflow:hidden;margin:0;line-height:0}
+.blog-brand-header{background:var(--yellow);padding:30px 0}
+.blog-brand-mark{position:relative;width:min(100%,480px);aspect-ratio:1750/445;overflow:hidden;margin:0;line-height:0}
 .blog-brand-mark img{position:absolute;display:block;width:142.857143%;max-width:none;height:auto;left:-10%;top:-24.719101%;object-fit:contain}
-@media(max-width:600px){.blog-brand-header{padding:32px 0}}
+@media(max-width:600px){.blog-brand-header{padding:24px 0}.blog-brand-mark{width:min(100%,320px)}}
