@@ -1,0 +1,23 @@
+{
+  "filename": "dinora-es.mp4",
+  "type": "video/mp4",
+  "size": 46314514,
+  "sha256": "b18306ba03b7df9a8205fb4e9122e2377e4bbbde3315510634a25b4875069700",
+  "parts": [
+    "part-000.bin",
+    "part-001.bin",
+    "part-002.bin",
+    "part-003.bin",
+    "part-004.bin",
+    "part-005.bin",
+    "part-006.bin",
+    "part-007.bin"
+  ],
+  "audio_language": "es",
+  "captions_embedded": true,
+  "subtitles_language": "es",
+  "original_footage": true,
+  "frame_count": 7105,
+  "fps": 30,
+  "duration_seconds": 236.83333333333334
+}

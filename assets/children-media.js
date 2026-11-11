@@ -9,7 +9,7 @@
       initial: 'Carregue o vídeo para assistir com as legendas disponíveis.',
       preparing: 'Preparando o vídeo…',
       progress: (percent, received, total) => `Carregando vídeo: ${percent}% (${received} de ${total}).`,
-      ready: 'Vídeo pronto. Use os controles para assistir e selecionar as legendas.',
+      ready: 'Vídeo pronto. Use os controles para assistir.',
       cancelled: 'Carregamento cancelado. Você pode tentar novamente.',
       error: 'Não foi possível carregar o vídeo. Confira sua conexão e tente novamente.'
     },
@@ -18,7 +18,7 @@
       initial: 'Load the video to watch with the available subtitles.',
       preparing: 'Preparing the video…',
       progress: (percent, received, total) => `Loading video: ${percent}% (${received} of ${total}).`,
-      ready: 'Video ready. Use the controls to watch and select subtitles.',
+      ready: 'Video ready. Use the controls to watch.',
       cancelled: 'Loading cancelled. You can try again.',
       error: 'The video could not be loaded. Check your connection and try again.'
     },
@@ -27,7 +27,7 @@
       initial: 'Cargue el vídeo para verlo con los subtítulos disponibles.',
       preparing: 'Preparando el vídeo…',
       progress: (percent, received, total) => `Cargando vídeo: ${percent}% (${received} de ${total}).`,
-      ready: 'Vídeo listo. Use los controles para verlo y seleccionar los subtítulos.',
+      ready: 'Vídeo listo. Use los controles para verlo.',
       cancelled: 'Carga cancelada. Puede intentarlo de nuevo.',
       error: 'No se pudo cargar el vídeo. Revise su conexión e inténtelo de nuevo.'
     }

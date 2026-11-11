@@ -5,3 +5,5 @@
 
 .children-testimonial .children-media-controls{padding:16px 26px 0}.children-testimonial .children-media-controls button{margin-top:0}
 @media(max-width:700px){.children-testimonial .children-media-controls{padding:16px 24px 0}.children-study{grid-template-columns:1fr;gap:20px;padding:24px}.children-study-cover{width:96px}.children-study .button{width:100%;justify-content:center;text-align:center}}
+
+@media(max-width:700px){.children-testimonial video[data-children-manifest*="dinora-"]{height:270px;object-fit:contain;background:#08131b}}
