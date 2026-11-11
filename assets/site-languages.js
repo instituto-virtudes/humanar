@@ -83,55 +83,108 @@
     });
   };
 
-  // Protect the Institute's own field name before translation and repair later output.
-  const termPattern = /\b(?:virtologia|virtology|virtolog[ií]a|virology|virolog[ií]a)\b/gi;
-  const plainTerm = {pt: 'Virtologia', en: 'Virtology', es: 'Virtología'};
-  const termCase = word => word === word.toUpperCase() ? 'upper' : word === word.toLowerCase() ? 'lower' : 'title';
-  const styledTerm = (language, casing, original) => {
-    if (language === 'pt' && original && /^virtologia$/i.test(original)) return original;
-    const term = plainTerm[language];
-    return casing === 'upper' ? term.toUpperCase() : casing === 'lower' ? term.toLowerCase() : term;
+  // Let the provider translate complete sentences. Splitting a word into a
+  // notranslate span first loses grammatical context and can glue its neighbors.
+  // Remember where the source discusses Virtologia, then repair only that field's
+  // translated words in their existing text nodes. Portuguese is never rewritten.
+  const sourceTermPattern = /\b(?:virtolog[ií]a|virtol[oó]gicamente|virtol[oó]gic[oa]s?|virt[oó]log[oa]s?)\b/gi;
+  const termPattern = /\b(?:virtolog[ií]a|virtology|virolog[ií]a|virology|virtol[oó]gicamente|virol[oó]gicamente|virtologically|virologically|virtol[oó]gic[oa]s?|virol[oó]gic[oa]s?|virtological|virological|virt[oó]log[oa]s?|vir[oó]log[oa]s?|virtologists?|virologists?|virtuosamente|virtuously)\b/gi;
+  const termScopes = new WeakMap();
+  const originalTitle = document.title;
+  const termAttributes = new WeakMap();
+  const skippedTerms = 'script,style,noscript,textarea,input,select,option,svg,.notranslate,[translate="no"]';
+  const semanticScope = 'p,h1,h2,h3,h4,h5,h6,li,figcaption,td,th,blockquote,button,a,label';
+  const termKind = word => /(?:icamente|ically|osamente|uously)$/i.test(word) ? 'adverb' :
+    /(?:ological|[oó]gic[oa]s?)$/i.test(word) ? 'adjective' :
+    /(?:log[ií]a|logy)$/i.test(word) ? 'noun' : 'person';
+  const sourceWords = text => [...String(text).matchAll(sourceTermPattern)].map(match => match[0]);
+  const rememberScope = (element, words) => {
+    if (!words.length) return;
+    const saved = termScopes.get(element) || [];
+    termScopes.set(element, [...new Set([...saved, ...words])]);
   };
-  const replaceTerms = text => String(text).replace(termPattern, word => styledTerm(activeLanguage, termCase(word), word));
-  const protectTerms = () => {
-    document.querySelectorAll('[data-humanar-term="virtologia"]').forEach(span => {
-      const desired = styledTerm(activeLanguage, span.dataset.humanarTermCase, span.dataset.humanarTermOriginal);
-      if (span.textContent !== desired) span.textContent = desired;
-    });
+  const rememberAttribute = (element, name, text) => {
+    const words = sourceWords(text);
+    if (!words.length) return;
+    const attributes = termAttributes.get(element) || new Map();
+    if (!attributes.has(name)) attributes.set(name, {words, original: String(text)});
+    termAttributes.set(element, attributes);
+  };
+  const rememberTermContexts = () => {
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    const texts = [];
     while (walker.nextNode()) {
       const node = walker.currentNode, parent = node.parentElement;
-      if (!parent || parent.closest('script,style,noscript,textarea,input,select,option,svg,[data-humanar-term]')) continue;
-      termPattern.lastIndex = 0;
-      if (termPattern.test(node.nodeValue)) texts.push(node);
+      if (!parent || parent.closest(skippedTerms)) continue;
+      const words = sourceWords(node.nodeValue);
+      if (!words.length) continue;
+      rememberScope(parent, words);
+      const block = parent.closest(semanticScope);
+      if (block) rememberScope(block, words);
     }
-    texts.forEach(node => {
-      const fragment = document.createDocumentFragment(); let offset = 0;
-      termPattern.lastIndex = 0;
-      for (const match of node.nodeValue.matchAll(termPattern)) {
-        fragment.append(document.createTextNode(node.nodeValue.slice(offset, match.index)));
-        const span = document.createElement('span');
-        span.className = 'notranslate'; span.setAttribute('translate', 'no');
-        span.dataset.humanarTerm = 'virtologia'; span.dataset.humanarTermCase = termCase(match[0]);
-        span.dataset.humanarTermOriginal = match[0];
-        span.textContent = styledTerm(activeLanguage, span.dataset.humanarTermCase, match[0]);
-        fragment.append(span); offset = match.index + match[0].length;
-      }
-      fragment.append(document.createTextNode(node.nodeValue.slice(offset)));
-      node.replaceWith(fragment);
-    });
-    document.querySelectorAll('[alt],[title],[aria-label]').forEach(element => {
-      ['alt', 'title', 'aria-label'].forEach(name => {
-        if (!element.hasAttribute(name)) return;
-        const before = element.getAttribute(name), after = replaceTerms(before);
-        if (before !== after) element.setAttribute(name, after);
+    document.querySelectorAll('[alt],[title],[aria-label],meta[name="description"],meta[property="og:title"],meta[property="og:description"],meta[name="twitter:title"],meta[name="twitter:description"]').forEach(element => {
+      if (element.closest(skippedTerms)) return;
+      ['alt', 'title', 'aria-label', 'content'].forEach(name => {
+        if (element.hasAttribute(name)) rememberAttribute(element, name, element.getAttribute(name));
       });
     });
-    document.querySelectorAll('meta[name="description"],meta[property="og:title"],meta[property="og:description"],meta[name="twitter:title"],meta[name="twitter:description"]').forEach(meta => {
-      const before = meta.content, after = replaceTerms(before); if (before !== after) meta.content = after;
+    rememberScope(document.head, sourceWords(document.title));
+  };
+  const scopeFor = element => {
+    for (let parent = element; parent; parent = parent.parentElement) {
+      const scope = termScopes.get(parent);
+      if (scope) return scope;
+    }
+    return null;
+  };
+  const termCase = word => word === word.toUpperCase() ? 'upper' : word === word.toLowerCase() ? 'lower' : 'title';
+  const translatedTerm = (word, source) => {
+    const kind = termKind(word), lower = word.toLowerCase();
+    // A moral adverb is only a mistranslation when the source used the field's adverb.
+    if (/^(?:virtuosamente|virtuously)$/i.test(word) && !source.some(value => termKind(value) === 'adverb')) return word;
+    let replacement;
+    if (kind === 'noun') replacement = activeLanguage === 'en' ? 'Virtology' : 'Virtología';
+    else if (kind === 'adverb') replacement = activeLanguage === 'en' ? 'virtologically' : 'virtológicamente';
+    else {
+      const original = source.find(value => termKind(value) === kind) || '';
+      const ending = lower.match(/([oa])(s?)$/) || original.toLowerCase().match(/([oa])(s?)$/);
+      const plural = /s$/i.test(word);
+      if (activeLanguage === 'en') replacement = kind === 'adjective' ? 'virtological' : 'virtologist' + (plural ? 's' : '');
+      else replacement = (kind === 'adjective' ? 'virtológic' : 'virtólog') +
+        (ending?.[1] || 'o') + (plural ? 's' : '');
+    }
+    const casing = termCase(word);
+    return casing === 'upper' ? replacement.toUpperCase() : casing === 'lower' ? replacement.toLowerCase() :
+      replacement[0].toUpperCase() + replacement.slice(1);
+  };
+  const replaceTerms = (text, source) => !source ? text : String(text).replace(termPattern, word => translatedTerm(word, source));
+  const protectTerms = () => {
+    rememberTermContexts();
+    const engine = window.__GT?.translator;
+    if (activeLanguage === 'pt' || !engine?.finished || engine.error) return;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) {
+      const node = walker.currentNode, parent = node.parentElement;
+      // The provider lazily translates off-screen blocks even after finished=true.
+      // Its generated font wrappers identify translated text; never modify the
+      // still-Portuguese nodes awaiting that later viewport pass.
+      if (!parent || parent.closest(skippedTerms) || !parent.closest('font[dir="auto"]')) continue;
+      const before = node.nodeValue, after = replaceTerms(before, scopeFor(parent));
+      if (before !== after) node.nodeValue = after;
+    }
+    document.querySelectorAll('[alt],[title],[aria-label],meta[name="description"],meta[property="og:title"],meta[property="og:description"],meta[name="twitter:title"],meta[name="twitter:description"]').forEach(element => {
+      if (element.closest(skippedTerms)) return;
+      const attributes = termAttributes.get(element);
+      if (!attributes) return;
+      for (const [name, source] of attributes) {
+        const before = element.getAttribute(name);
+        if (before === null || before === source.original) continue;
+        const after = replaceTerms(before, source.words);
+        if (before !== after) element.setAttribute(name, after);
+      }
     });
-    const title = replaceTerms(document.title); if (title !== document.title) document.title = title;
+    const title = document.title === originalTitle ? document.title :
+      replaceTerms(document.title, termScopes.get(document.head));
+    if (title !== document.title) document.title = title;
   };
   let scheduled = false;
   const refresh = () => {

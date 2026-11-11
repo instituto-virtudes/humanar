@@ -1,0 +1,16 @@
+{
+  "filename": "dinora-pt.mp4",
+  "type": "video/mp4",
+  "size": 47381893,
+  "sha256": "bc69b0678e1a826424ccb1842dda476e1622923093bba93c68a9eed2575d84d8",
+  "parts": [
+    "part-000.bin",
+    "part-001.bin",
+    "part-002.bin",
+    "part-003.bin",
+    "part-004.bin",
+    "part-005.bin",
+    "part-006.bin",
+    "part-007.bin"
+  ]
+}
