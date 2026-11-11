@@ -47,6 +47,9 @@
     const lang = String(value || '').toLowerCase().split('-')[0];
     return lang === 'en' || lang === 'es' ? lang : 'pt';
   };
+  const routePrefix = /^\/(eng|esp)(?:\/|$)/.exec(location.pathname)?.[1];
+  const forcedLanguage = routePrefix === 'eng' ? 'en' : routePrefix === 'esp' ? 'es' :
+    (['pt', 'en', 'es'].includes(window.humanarRouteLanguage) ? window.humanarRouteLanguage : null);
   const savedLanguage = () => {
     try {
       const value = JSON.parse(localStorage.getItem('__GT_TRANSLATE_LANGS') || 'null');
@@ -56,7 +59,7 @@
   const clamp = value => Math.max(0, Math.min(pageCount - 1, Number.isFinite(value) ? Math.trunc(value) : 0));
   const requestedPage = () => clamp(Number(new URLSearchParams(location.hash.slice(1)).get('pagina') || 1) - 1);
   let documentLanguage = normalizeLanguage(document.documentElement.lang);
-  let language = documentLanguage === 'pt' ? savedLanguage() : documentLanguage;
+  let language = forcedLanguage || (documentLanguage === 'pt' ? savedLanguage() : documentLanguage);
   let index = requestedPage();
   let slides = null;
   let languageRevision = 0;
@@ -114,7 +117,7 @@
   };
   const show = async (value, setHash = true) => {
     index = clamp(value); controls();
-    if (setHash) history.replaceState(null, '', `#pagina=${index + 1}`);
+    if (setHash) { const target = new URL(location.href); target.hash = `pagina=${index + 1}`; history.replaceState(null, '', target.href); }
     if (!slides) return;
     const slide = slides[index];
     const expectedLanguage = languageRevision;
@@ -141,7 +144,7 @@
     }
   };
   const changeLanguage = async (value, force = false) => {
-    const nextLanguage = normalizeLanguage(value);
+    const nextLanguage = forcedLanguage || normalizeLanguage(value);
     if (!force && nextLanguage === language) return;
     language = nextLanguage;
     const revision = ++languageRevision;

@@ -153,6 +153,9 @@
     const language = String(value || '').toLowerCase().split('-')[0];
     return language === 'en' || language === 'es' ? language : 'pt';
   };
+  const downloadRoutePrefix = /^\/(eng|esp)(?:\/|$)/.exec(location.pathname)?.[1];
+  const forcedDownloadLanguage = downloadRoutePrefix === 'eng' ? 'en' : downloadRoutePrefix === 'esp' ? 'es' :
+    (['pt', 'en', 'es'].includes(window.humanarRouteLanguage) ? window.humanarRouteLanguage : null);
   const savedDownloadLanguage = () => {
     try {
       const saved = JSON.parse(localStorage.getItem('__GT_TRANSLATE_LANGS') || 'null');
@@ -180,7 +183,8 @@
     const status = statusFor(link, link.closest('.buttons') || link);
     let documentLanguage = normalizeLanguage(document.documentElement.lang);
     // On an internal page, the saved language is available before GTranslate finishes loading.
-    let language = documentLanguage === 'pt' ? savedDownloadLanguage() : documentLanguage;
+    let language = (languageAware && forcedDownloadLanguage) ||
+      (documentLanguage === 'pt' ? savedDownloadLanguage() : documentLanguage);
     let loading = false;
     let ready = false;
     let preparedFile = null;
@@ -190,6 +194,7 @@
     const label = () => languageAware ? messages().label : originalLabel;
 
     const applyLanguage = (nextLanguage, initial = false) => {
+      nextLanguage = forcedDownloadLanguage || nextLanguage;
       if (!languageAware || (!initial && nextLanguage === language)) return;
       language = nextLanguage;
       revision += 1;
