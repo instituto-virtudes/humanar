@@ -1,6 +1,7 @@
 /* Idiomas do Humanar: tradução gratuita, endereços compartilháveis e terminologia. */
 (() => {
   'use strict';
+  if (window.humanarLocaleRedirecting) return;
   const languages = ['pt', 'en', 'es'];
   const prefixes = {en: 'eng', es: 'esp'};
   const names = {pt: 'Português', en: 'English', es: 'Español'};
@@ -23,6 +24,15 @@
     } catch { return 'pt'; }
   };
   let activeLanguage = explicitLanguage || storedLanguage();
+  // A restored preference must be visible in the address that the visitor copies.
+  if (!explicitLanguage && activeLanguage !== 'pt') {
+    const destination = new URL(location.href);
+    destination.pathname = '/' + prefixes[activeLanguage] +
+      (destination.pathname === '/index.html' ? '/' : destination.pathname);
+    window.humanarLocaleRedirecting = true;
+    location.replace(destination.href);
+    return;
+  }
   const persistLanguage = language => {
     try {
       if (language === 'pt') localStorage.removeItem('__GT_TRANSLATE_LANGS');
