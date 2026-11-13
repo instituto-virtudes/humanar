@@ -1,8 +1,10 @@
-/* Abertura editorial: marca original, conceito e conteúdos em fileira. */
+/* Abertura editorial: marca tipográfica traduzível, conceito e conteúdos em fileira. */
 .blog-brand-header{background:var(--yellow);padding:48px 0}
 .blog-intro-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:center}
-.blog-brand-mark{position:relative;width:min(100%,420px);aspect-ratio:1750/445;overflow:hidden;margin:0;line-height:0}
-.blog-brand-mark img{position:absolute;display:block;width:142.857143%;max-width:none;height:auto;left:-10%;top:-24.719101%;object-fit:contain}
+.blog-brand-mark{width:min(100%,420px);margin:0;color:#03131f;font-family:var(--font);line-height:1.12}
+.blog-brand-kicker{display:block;margin:0 0 7px;font-size:14px;font-weight:400;line-height:1.2;letter-spacing:.72em;text-transform:uppercase}
+.blog-brand-title{display:block;font-size:clamp(31px,3.3vw,46px);font-weight:800;line-height:1.04;letter-spacing:-.055em;white-space:nowrap}
+.blog-brand-tagline{display:block;margin-top:9px;font-size:clamp(14px,1.32vw,17px);font-weight:400;line-height:1.4;letter-spacing:-.025em}
 .blog-concept{font-size:17px;line-height:1.8;min-width:0;color:var(--ink)}
 .blog-concept p:last-child{margin-bottom:0}
 .blog-content-section .blog-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;align-items:stretch}
@@ -25,4 +27,4 @@
  .blog-scroll-hint{display:flex;justify-content:space-between;gap:18px;font-size:12px;color:var(--muted);margin-bottom:22px}
  .blog-scroll-hint span{font-size:18px;line-height:1}
 }
-@media(max-width:600px){.blog-brand-header{padding:30px 0}.blog-brand-mark{width:min(100%,320px)}.blog-intro-grid{gap:24px}.blog-content-section.section{padding:38px 0}}
+@media(max-width:600px){.blog-brand-header{padding:30px 0}.blog-brand-mark{width:min(100%,320px)}.blog-brand-kicker{font-size:12px;letter-spacing:.65em}.blog-brand-title{font-size:clamp(27px,8.3vw,36px)}.blog-brand-tagline{font-size:14px;margin-top:8px}.blog-intro-grid{gap:24px}.blog-content-section.section{padding:38px 0}}
