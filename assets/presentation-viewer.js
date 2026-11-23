@@ -16,12 +16,12 @@
   const summary = viewer.querySelector('details > summary');
   const indexNav = viewer.querySelector('.viewer-index');
   const sectionButtons = [...viewer.querySelectorAll('[data-page]')];
-  const pageCount = Number(number.max) || 90;
+  const pageCount = Number(number.max) || 91;
   const messages = {
     pt: {
       previous: '← Anterior', previousLabel: 'Página anterior', next: 'Próxima →', nextLabel: 'Próxima página',
       page: 'Página', total: count => `de ${count}`, summary: 'Texto desta página',
-      section: 'Ir para uma seção da apresentação', sections: ['Início', 'Sistema penitenciário', 'Infância e famílias', 'Comunidades terapêuticas'],
+      section: 'Ir para uma seção da apresentação', sections: ['Início', 'Sistema penitenciário', 'Infância e famílias', 'Comunidades terapêuticas', 'Rondonópolis · novembro'],
       alt: page => `Página ${page} da apresentação do Humanar`, position: (page, count) => `Página ${page} de ${count}`,
       loading: 'Carregando apresentação…', retry: 'Carregar novamente',
       error: 'Não foi possível carregar a apresentação neste idioma. Tente novamente ou baixe o arquivo abaixo.'
@@ -29,7 +29,7 @@
     en: {
       previous: '← Previous', previousLabel: 'Previous page', next: 'Next →', nextLabel: 'Next page',
       page: 'Page', total: count => `of ${count}`, summary: 'Text on this page',
-      section: 'Go to a presentation section', sections: ['Home', 'Prison system', 'Children and families', 'Therapeutic communities'],
+      section: 'Go to a presentation section', sections: ['Home', 'Prison system', 'Children and families', 'Therapeutic communities', 'Rondonópolis · November'],
       alt: page => `Page ${page} of the Humanar presentation`, position: (page, count) => `Page ${page} of ${count}`,
       loading: 'Loading presentation…', retry: 'Try again',
       error: 'The presentation could not be loaded in this language. Try again or download the file below.'
@@ -37,7 +37,7 @@
     es: {
       previous: '← Anterior', previousLabel: 'Página anterior', next: 'Siguiente →', nextLabel: 'Página siguiente',
       page: 'Página', total: count => `de ${count}`, summary: 'Texto de esta página',
-      section: 'Ir a una sección de la presentación', sections: ['Inicio', 'Sistema penitenciario', 'Infancia y familias', 'Comunidades terapéuticas'],
+      section: 'Ir a una sección de la presentación', sections: ['Inicio', 'Sistema penitenciario', 'Infancia y familias', 'Comunidades terapéuticas', 'Rondonópolis · noviembre'],
       alt: page => `Página ${page} de la presentación de Humanar`, position: (page, count) => `Página ${page} de ${count}`,
       loading: 'Cargando presentación…', retry: 'Volver a intentar',
       error: 'No se pudo cargar la presentación en este idioma. Vuelva a intentarlo o descargue el archivo de abajo.'
@@ -104,7 +104,7 @@
     const url = new URL(reference, document.baseURI);
     const promise = (async () => {
       if (url.origin !== location.origin) throw new Error('Invalid presentation origin');
-      const response = await fetch(url);
+      const response = await fetch(url, { cache: 'no-store' });
       if (!response.ok) throw new Error('Presentation unavailable');
       const data = await response.json();
       if (!Array.isArray(data) || data.length !== pageCount || !data.every(slide => slide &&

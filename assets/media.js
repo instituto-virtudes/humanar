@@ -27,7 +27,7 @@
     try {
       const manifestUrl = new URL(reference, document.baseURI);
       if (manifestUrl.origin !== location.origin) throw new Error('Invalid manifest origin');
-      const response = await fetch(manifestUrl, { signal: controller.signal });
+      const response = await fetch(manifestUrl, { signal: controller.signal, cache: 'no-store' });
       if (!response.ok) throw new Error('Manifest unavailable');
       const manifest = await response.json();
       if (!manifest || !Array.isArray(manifest.parts) || !manifest.parts.length ||
